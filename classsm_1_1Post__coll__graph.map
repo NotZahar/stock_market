@@ -1,4 +1,4 @@
 <map id="sm::Post" name="sm::Post">
 <area shape="rect" id="node1" title=" " alt="" coords="41,80,120,107"/>
-<area shape="rect" id="node2" href="$classsm_1_1MethodHandler.html" title="Декоратор&#45;родитель для проверки валидности http&#45;запроса" alt="" coords="5,5,156,32"/>
+<area shape="rect" id="node2" href="$classsm_1_1MethodHandler.html" title="Декоратор для проверки валидности http&#45;запроса" alt="" coords="5,5,156,32"/>
 </map>
