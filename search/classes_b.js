@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['sanitizer_230',['sanitizer',['../structsm_1_1db_1_1sanitizer.html',1,'sm::db']]],
-  ['servererrorresponse_231',['ServerErrorResponse',['../classsm_1_1ServerErrorResponse.html',1,'sm']]],
-  ['stockmarket_232',['StockMarket',['../classsm_1_1StockMarket.html',1,'sm']]],
-  ['success_233',['success',['../structsm_1_1messages_1_1success.html',1,'sm::messages']]]
+  ['make_5fvoid_1213',['make_void',['../structdetail_1_1make__void.html',1,'detail']]],
+  ['marketservice_1214',['MarketService',['../classsm_1_1service_1_1MarketService.html',1,'sm::service']]],
+  ['messages_1215',['messages',['../structsm_1_1messages.html',1,'sm']]],
+  ['methodhandler_1216',['MethodHandler',['../classsm_1_1MethodHandler.html',1,'sm']]]
 ];

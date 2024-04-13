@@ -1,6 +1,7 @@
 <map id="libs/StockMarket/src/utility/params.hpp" name="libs/StockMarket/src/utility/params.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="63,5,216,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="104,5,257,47"/>
 <area shape="rect" id="node2" href="$router_8cpp.html" title=" " alt="" coords="5,184,159,225"/>
-<area shape="rect" id="node3" href="$url_8hpp.html" title=" " alt="" coords="120,95,273,136"/>
-<area shape="rect" id="node4" href="$libs_2StockMarket_2tests_2main_8cpp.html" title=" " alt="" coords="183,184,349,225"/>
+<area shape="rect" id="node3" href="$url_8hpp.html" title=" " alt="" coords="183,95,336,136"/>
+<area shape="rect" id="node4" href="$auth__service_8cpp.html" title=" " alt="" coords="183,184,378,225"/>
+<area shape="rect" id="node5" href="$libs_2StockMarket_2tests_2main_8cpp.html" title=" " alt="" coords="403,184,569,225"/>
 </map>

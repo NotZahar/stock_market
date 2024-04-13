@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['Биржа_20с_20клиент_2dсерверной_20архитектурой_206',['Биржа с клиент-серверной архитектурой',['../md_README.html',1,'']]]
+  ['x_1028',['x',['../structdetail_1_1is__ordered__map_1_1two.html#a762e0d409e9c4f003df0638c04dfa3c8',1,'detail::is_ordered_map::two']]]
 ];

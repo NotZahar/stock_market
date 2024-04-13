@@ -104,8 +104,10 @@ $(function() {
 Открытые статические члены</h2></td></tr>
 <tr class="memitem:a6f0653bcece28db50fd163c6040b12e7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a6f0653bcece28db50fd163c6040b12e7">create</a> (<a class="el" href="structsm_1_1service_1_1UserService_1_1User.html">User</a> user, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;error) noexcept</td></tr>
 <tr class="separator:a6f0653bcece28db50fd163c6040b12e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07fcb7453578d9b85c5ebda37a1885c2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a07fcb7453578d9b85c5ebda37a1885c2">exists</a> (std::string_view email, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;error) noexcept</td></tr>
-<tr class="separator:a07fcb7453578d9b85c5ebda37a1885c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cbada8a895fc46d8ded2f6951c1b18e"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a6cbada8a895fc46d8ded2f6951c1b18e">getId</a> (std::string_view email, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;eCode) noexcept</td></tr>
+<tr class="separator:a6cbada8a895fc46d8ded2f6951c1b18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9106517c6433f64c0daff0d0c790e9eb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a9106517c6433f64c0daff0d0c790e9eb">exists</a> (std::string_view userId, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;eCode) noexcept</td></tr>
+<tr class="separator:a9106517c6433f64c0daff0d0c790e9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Перечисления</h2>
 <a id="a491a372f6af6f908482d67004223f0c0"></a>
@@ -223,8 +225,8 @@ $(function() {
 
 </div>
 </div>
-<a id="a07fcb7453578d9b85c5ebda37a1885c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07fcb7453578d9b85c5ebda37a1885c2">&#9670;&nbsp;</a></span>exists()</h2>
+<a id="a9106517c6433f64c0daff0d0c790e9eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9106517c6433f64c0daff0d0c790e9eb">&#9670;&nbsp;</a></span>exists()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -236,13 +238,49 @@ $(function() {
           <td class="memname">bool sm::service::UserService::exists </td>
           <td>(</td>
           <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;&#160;</td>
+          <td class="paramname"><em>eCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6cbada8a895fc46d8ded2f6951c1b18e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cbada8a895fc46d8ded2f6951c1b18e">&#9670;&nbsp;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string sm::service::UserService::getId </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
           <td class="paramname"><em>email</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;&#160;</td>
-          <td class="paramname"><em>error</em>&#160;</td>
+          <td class="paramname"><em>eCode</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

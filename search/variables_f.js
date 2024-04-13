@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zero_5fchanges_397',['ZERO_CHANGES',['../classsm_1_1service_1_1DBService.html#a1222256a44a3da8e303797472df8cd9c',1,'sm::service::DBService']]]
+  ['queryregex_1721',['queryRegex',['../structsm_1_1db_1_1sanitizer.html#a4eec9183fd324f9d9a4b9f0c605c2705',1,'sm::db::sanitizer']]]
 ];

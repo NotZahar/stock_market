@@ -1,5 +1,6 @@
 <map id="libs/StockMarket/src/services/db_service.hpp" name="libs/StockMarket/src/services/db_service.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="110,5,293,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="227,5,410,47"/>
 <area shape="rect" id="node2" href="$db__service_8cpp.html" title=" " alt="" coords="5,95,187,136"/>
-<area shape="rect" id="node3" href="$user__service_8cpp.html" title=" " alt="" coords="211,95,405,136"/>
+<area shape="rect" id="node3" href="$request__service_8cpp.html" title=" " alt="" coords="211,95,426,136"/>
+<area shape="rect" id="node4" href="$user__service_8cpp.html" title=" " alt="" coords="450,95,643,136"/>
 </map>

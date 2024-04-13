@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['id_373',['id',['../structsm_1_1service_1_1UserService_1_1User.html#ac5ead58b9db4e51249575d891f583878',1,'sm::service::UserService::User']]],
-  ['internal_5ferror_374',['INTERNAL_ERROR',['../structsm_1_1messages_1_1errors.html#a1e43e41609deb495ecb7180c78f785a3',1,'sm::messages::errors']]],
-  ['internal_5ferror_5fgeneral_375',['INTERNAL_ERROR_GENERAL',['../structsm_1_1messages_1_1errors.html#a902fc4b1e2c443598830fb97f2f287e5',1,'sm::messages::errors']]],
-  ['invalid_5fauth_5fcreate_376',['INVALID_AUTH_CREATE',['../structsm_1_1messages_1_1errors.html#a60149a2a9df664987b5485518c081c49',1,'sm::messages::errors']]],
-  ['invalid_5fauth_5flogin_377',['INVALID_AUTH_LOGIN',['../structsm_1_1messages_1_1errors.html#aec4671f3b1ff028226f1080749501f28',1,'sm::messages::errors']]],
-  ['invalid_5fmethod_378',['INVALID_METHOD',['../structsm_1_1messages_1_1errors.html#a276a7feda97a91111eb92d679450f701',1,'sm::messages::errors']]],
-  ['invalid_5frequest_379',['INVALID_REQUEST',['../structsm_1_1messages_1_1errors.html#a5f0ad947419d447412d597db9c5bf566',1,'sm::messages::errors']]]
+  ['help_1679',['help',['../structsm_1_1OptionsParser_1_1Options.html#a8df605a952cf34e93182f379c9d9b98f',1,'sm::OptionsParser::Options']]],
+  ['help_1680',['HELP',['../structsm_1_1messages_1_1options.html#aab42de3020f458bea796047099f88a47',1,'sm::messages::options']]],
+  ['help_5fdescr_1681',['HELP_DESCR',['../structsm_1_1messages_1_1options.html#ae2e96e3fe998ba0414f10b6a423483a2',1,'sm::messages::options']]],
+  ['help_5ff_1682',['HELP_F',['../structsm_1_1messages_1_1options.html#a6f2018f2c8750df8a3ec1cdd1d035f80',1,'sm::messages::options']]],
+  ['help_5fheader_1683',['HELP_HEADER',['../structsm_1_1messages_1_1general.html#aad58b7c0d32dd566d52d20198d00444a',1,'sm::messages::general']]],
+  ['help_5fmessage_1684',['HELP_MESSAGE',['../structsm_1_1messages_1_1general.html#a204a895a840adff180bd032c693e5383',1,'sm::messages::general']]],
+  ['help_5fs_1685',['HELP_S',['../structsm_1_1messages_1_1options.html#ac612fe9c11d4518c6864f9101ef19148',1,'sm::messages::options']]],
+  ['httpversion_1686',['httpVersion',['../structsm_1_1Response_1_1RequestInfo.html#a64e5383dd0cca5b732cad5940154936b',1,'sm::Response::RequestInfo']]]
 ];

@@ -85,8 +85,8 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structsm_1_1url.html#abfa3095e208d350ca44998c9a6462996">   12</a></span>&#160;        std::list&lt;std::string&gt; <a class="code" href="structsm_1_1url.html#abfa3095e208d350ca44998c9a6462996">getSegments</a>() const noexcept {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keyword">auto</span> urlView = urls::url_view{ <a class="code" href="structsm_1_1url.html#a20917cae6e5aa4b0579724802104eb9a">relativeUrl</a> };</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            std::list&lt;std::string&gt; segments;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> segment : urlView.segments())</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                segments.emplace_back(segment);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code" href="namespacesm_1_1routes.html#af42fdc5e94129fc54da6b604fab85eca">segment</a> : urlView.segments())</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                segments.emplace_back(<a class="code" href="namespacesm_1_1routes.html#af42fdc5e94129fc54da6b604fab85eca">segment</a>);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">return</span> segments;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
@@ -113,6 +113,7 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structsm_1_1url.html#a20917cae6e5aa4b0579724802104eb9a">   40</a></span>&#160;        std::string <a class="code" href="structsm_1_1url.html#a20917cae6e5aa4b0579724802104eb9a">relativeUrl</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    };</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="ttc" id="anamespacesm_1_1routes_html_af42fdc5e94129fc54da6b604fab85eca"><div class="ttname"><a href="namespacesm_1_1routes.html#af42fdc5e94129fc54da6b604fab85eca">sm::routes::segment</a></div><div class="ttdeci">segment</div><div class="ttdef"><b>Definition:</b> segments.hpp:9</div></div>
 <div class="ttc" id="anamespacesm_html"><div class="ttname"><a href="namespacesm.html">sm</a></div><div class="ttdef"><b>Definition:</b> logger.hpp:5</div></div>
 <div class="ttc" id="anamespacesm_html_ab5ffd2949a04cbb05195d4b2a1dd328e"><div class="ttname"><a href="namespacesm.html#ab5ffd2949a04cbb05195d4b2a1dd328e">sm::urlParam</a></div><div class="ttdeci">urlParam</div><div class="ttdef"><b>Definition:</b> params.hpp:9</div></div>
 <div class="ttc" id="aparams_8hpp_html"><div class="ttname"><a href="params_8hpp.html">params.hpp</a></div></div>

@@ -107,10 +107,12 @@ $(function() {
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Открытые статические члены</h2></td></tr>
-<tr class="memitem:a593f4202e100f5421ed9d9990568eaf2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1AuthService.html#a593f4202e100f5421ed9d9990568eaf2">registerUser</a> (<a class="el" href="structsm_1_1service_1_1AuthService_1_1RegisterUserData.html">RegisterUserData</a> registerData, <a class="el" href="classsm_1_1service_1_1AuthService.html#a1c5a1f7e6cae661701e7c1fcd64f651a">errorCode</a> &amp;eCode)</td></tr>
-<tr class="separator:a593f4202e100f5421ed9d9990568eaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa81d16eaf024949d7ee8a8193363bb9f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1AuthService.html#aa81d16eaf024949d7ee8a8193363bb9f">loginUser</a> (<a class="el" href="structsm_1_1service_1_1AuthService_1_1LoginUserData.html">LoginUserData</a> loginData, <a class="el" href="classsm_1_1service_1_1AuthService.html#a1c5a1f7e6cae661701e7c1fcd64f651a">errorCode</a> &amp;eCode)</td></tr>
-<tr class="separator:aa81d16eaf024949d7ee8a8193363bb9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c333a135583b9ad2d01ae4370376c0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1AuthService.html#ae3c333a135583b9ad2d01ae4370376c0">registerUser</a> (<a class="el" href="structsm_1_1service_1_1AuthService_1_1RegisterUserData.html">RegisterUserData</a> registerData, <a class="el" href="classsm_1_1service_1_1AuthService.html#a1c5a1f7e6cae661701e7c1fcd64f651a">errorCode</a> &amp;eCode) noexcept</td></tr>
+<tr class="separator:ae3c333a135583b9ad2d01ae4370376c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72faef7db34e1bef943337c5f6fff8f0"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1AuthService.html#a72faef7db34e1bef943337c5f6fff8f0">loginUser</a> (<a class="el" href="structsm_1_1service_1_1AuthService_1_1LoginUserData.html">LoginUserData</a> loginData, <a class="el" href="classsm_1_1service_1_1AuthService.html#a1c5a1f7e6cae661701e7c1fcd64f651a">errorCode</a> &amp;eCode) noexcept</td></tr>
+<tr class="separator:a72faef7db34e1bef943337c5f6fff8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a338b98213ed988a74d3f8d32241425af"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1AuthService.html#a338b98213ed988a74d3f8d32241425af">authenticateUser</a> (const std::unordered_map&lt; std::string, std::string &gt; &amp;params, <a class="el" href="classsm_1_1service_1_1AuthService.html#a1c5a1f7e6cae661701e7c1fcd64f651a">errorCode</a> &amp;eCode) noexcept</td></tr>
+<tr class="separator:a338b98213ed988a74d3f8d32241425af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Модуль аутентификации </p>
@@ -194,8 +196,8 @@ $(function() {
 </div>
 </div>
 <h2 class="groupheader">Методы</h2>
-<a id="aa81d16eaf024949d7ee8a8193363bb9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa81d16eaf024949d7ee8a8193363bb9f">&#9670;&nbsp;</a></span>loginUser()</h2>
+<a id="a338b98213ed988a74d3f8d32241425af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a338b98213ed988a74d3f8d32241425af">&#9670;&nbsp;</a></span>authenticateUser()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,7 +206,43 @@ $(function() {
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool sm::service::AuthService::loginUser </td>
+          <td class="memname">bool sm::service::AuthService::authenticateUser </td>
+          <td>(</td>
+          <td class="paramtype">const std::unordered_map&lt; std::string, std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classsm_1_1service_1_1AuthService.html#a1c5a1f7e6cae661701e7c1fcd64f651a">errorCode</a> &amp;&#160;</td>
+          <td class="paramname"><em>eCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a72faef7db34e1bef943337c5f6fff8f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72faef7db34e1bef943337c5f6fff8f0">&#9670;&nbsp;</a></span>loginUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string sm::service::AuthService::loginUser </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structsm_1_1service_1_1AuthService_1_1LoginUserData.html">LoginUserData</a>&#160;</td>
           <td class="paramname"><em>loginData</em>, </td>
@@ -223,15 +261,15 @@ $(function() {
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a593f4202e100f5421ed9d9990568eaf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a593f4202e100f5421ed9d9990568eaf2">&#9670;&nbsp;</a></span>registerUser()</h2>
+<a id="ae3c333a135583b9ad2d01ae4370376c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3c333a135583b9ad2d01ae4370376c0">&#9670;&nbsp;</a></span>registerUser()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,7 +297,7 @@ $(function() {
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

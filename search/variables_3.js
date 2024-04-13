@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['dbpath_357',['dbPath',['../structsm_1_1paths.html#a0efe57cfd18a146137d3579edb8444e7',1,'sm::paths']]],
-  ['defaultaddress_358',['defaultAddress',['../structsm_1_1config.html#a61e73a30855aa2431bb4bfc997e1d22a',1,'sm::config']]],
-  ['defaultauthsecret_359',['defaultAuthSecret',['../structsm_1_1config.html#a562d2dd4f7b868898b2c39717a7bc367',1,'sm::config']]],
-  ['defaultport_360',['defaultPort',['../structsm_1_1config.html#afb9a85071ad38dabd5487fcfc9081deb',1,'sm::config']]],
-  ['defaultsessiontimeout_361',['defaultSessionTimeout',['../structsm_1_1config.html#ad9fffc6c09e537f8c5bae37b17c5d681',1,'sm::config']]],
-  ['defaultthreads_362',['defaultThreads',['../structsm_1_1config.html#ab01b51e6702fcd85e0f869c0c90d3115',1,'sm::config']]]
+  ['chars_5fread_5fcurrent_5fline_1662',['chars_read_current_line',['../structdetail_1_1position__t.html#a6548d584bd03d1d47bfcd7cf8b1fb0c6',1,'detail::position_t']]],
+  ['chars_5fread_5ftotal_1663',['chars_read_total',['../structdetail_1_1position__t.html#ac4d220d61ce61eeffbea40985727a3b0',1,'detail::position_t']]],
+  ['client_5fid_1664',['client_id',['../structsm_1_1service_1_1RequestService_1_1Request.html#a85ca379dc22d53e7f869c6937feb84a3',1,'sm::service::RequestService::Request']]]
 ];
