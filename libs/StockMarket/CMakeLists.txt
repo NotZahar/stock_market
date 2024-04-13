@@ -40,6 +40,7 @@ target_sources(${PROJECT_NAME}
         src/responses/auth/register.cpp
         src/responses/market/purchase.cpp
         src/responses/market/sell.cpp
+        src/responses/user/balance.cpp
 
         # services
         src/services/db_service.cpp

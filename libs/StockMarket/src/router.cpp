@@ -5,6 +5,8 @@
 #include "responses/authorized.hpp"
 #include "responses/market/purchase.hpp"
 #include "responses/market/sell.hpp"
+#include "responses/user/balance.hpp"
+#include "responses/get.hpp"
 #include "responses/post.hpp"
 #include "responses/error/bad_request.hpp"
 #include "services/auth_service.hpp"
@@ -80,6 +82,19 @@ namespace sm {
                             requestInfo,
                             requestParams.at(urlParams.left.find(urlParam::user)->second),
                             requestBody)
+                    )
+                }.response();
+            } case routes::segment::user_balance: {
+                if (!url::paramsExists(requestParams, { urlParam::user }))
+                    return BadRequestResponse{ requestInfo }.create();
+
+                return Authorized{
+                    requestParams,
+                    std::make_unique<Get>(
+                        requestMethod, 
+                        std::make_unique<BalanceResponse>(
+                            requestInfo,
+                            requestParams.at(urlParams.left.find(urlParam::user)->second))
                     )
                 }.response();
             } default: { 

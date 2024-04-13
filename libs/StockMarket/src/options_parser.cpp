@@ -37,11 +37,6 @@ namespace sm {
                 po::value<decltype(Options::threads)>(),
                 messages::options::THREADS_DESCR.c_str()
             )
-            (
-                messages::options::AUTH_SECRET.c_str(),
-                po::value<decltype(Options::authSecret)>(),
-                messages::options::AUTH_SECRET_DESCR.c_str()
-            )
         ;
     }
 
@@ -69,10 +64,6 @@ namespace sm {
         if (variablesMap.count(messages::options::THREADS_F))
             options.threads = 
                 variablesMap[messages::options::THREADS_F].as<decltype(Options::threads)>();
-
-        if (variablesMap.count(messages::options::AUTH_SECRET_F))
-            options.authSecret = 
-                variablesMap[messages::options::AUTH_SECRET_F].as<decltype(Options::authSecret)>();
 
         return options;
     }

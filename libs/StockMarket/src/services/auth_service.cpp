@@ -8,7 +8,6 @@
 namespace sm::service {
     void AuthService::registerUser(RegisterUserData registerData, errorCode& eCode) noexcept {
         const auto email = registerData.email;
-        constexpr int INITIAL_BALANCE = 0;
 
         if (!db::sanitizer::isValid(email)) {
             eCode = errorCode::badData;
@@ -20,7 +19,7 @@ namespace sm::service {
             UserService::User{ 
                 uuid::generateUUID(),
                 email,
-                INITIAL_BALANCE 
+                UserService::INITIAL_BALANCE 
             }, 
             createError);
         

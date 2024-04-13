@@ -10,7 +10,8 @@ namespace sm::routes {
         auth_register,
         auth_login,
         market_purchase,
-        market_sell
+        market_sell,
+        user_balance
     };
 
     inline static const boost::bimap<segment, std::string> routeSegments = 
@@ -18,5 +19,6 @@ namespace sm::routes {
         ( segment::auth_register, "auth_register" )
         ( segment::auth_login, "auth_login" )
         ( segment::market_purchase, "market_purchase" )
-        ( segment::market_sell, "market_sell" );
+        ( segment::market_sell, "market_sell" )
+        ( segment::user_balance, "user_balance" );
 }

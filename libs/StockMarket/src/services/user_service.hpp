@@ -22,9 +22,12 @@ namespace sm::service {
 
         ~UserService() = default;
         
+        static std::string getBalance(std::string_view userId, errorCode& eCode) noexcept;
         static void create(User user, errorCode& error) noexcept;
         static std::string getId(std::string_view email, errorCode& eCode) noexcept;
         static bool exists(std::string_view userId, errorCode& eCode) noexcept;
+
+        inline static constexpr int INITIAL_BALANCE = 0;
 
     private:
         static const std::string _createUserQuery;

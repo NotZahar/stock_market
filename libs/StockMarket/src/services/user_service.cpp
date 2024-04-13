@@ -1,8 +1,10 @@
 #include "user_service.hpp"
 
 #include <cassert>
+#include <iterator>
 
 #include "db_service.hpp"
+#include "../utility/db.hpp"
 
 namespace sm::service {
     const std::string UserService::_createUserQuery = 
@@ -31,6 +33,42 @@ namespace sm::service {
             WHERE
                 id IS ?
         )";
+
+    std::string UserService::getBalance(std::string_view userId, errorCode& eCode) noexcept {
+        if (!db::sanitizer::isValid(userId)) {
+            eCode = errorCode::badData;
+            return {};
+        }
+        
+        DBService::errorCode selectError{};
+        std::vector<std::string> values;
+        constexpr int SCHEMA_SIZE = 3;
+        
+        values.emplace_back(userId);
+        
+        const auto users = DBService::select(
+            _getUserIdQuery, 
+            std::move(values),
+            SCHEMA_SIZE,
+            selectError
+        );
+        
+        if (selectError != DBService::errorCode::noError) {
+            eCode = errorCode::badData;
+            return {};
+        }
+
+        if (users.empty())
+            return {};
+
+        assert(users.size() == 1);
+        auto rawUser = users.front();
+        auto rawUserIt = rawUser.cbegin();
+        std::advance(rawUserIt, 2);
+        
+        const std::string dbBalance = *rawUserIt;
+        return dbBalance;
+    }
 
     void UserService::create(User user, errorCode& error) noexcept {
         DBService::errorCode insertError{};
