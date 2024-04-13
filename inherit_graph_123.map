@@ -1,9 +1,10 @@
 <map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
-<area shape="rect" id="node1" href="$classsm_1_1Response.html" title="Родитель для всех http&#45;ответов" alt="" coords="5,132,119,159"/>
+<area shape="rect" id="node1" href="$classsm_1_1Response.html" title="Родитель для всех http&#45;ответов" alt="" coords="5,157,119,184"/>
 <area shape="rect" id="node2" href="$classsm_1_1BadRequestResponse.html" title=" " alt="" coords="167,5,357,32"/>
-<area shape="rect" id="node3" href="$classsm_1_1LoginResponse.html" title=" " alt="" coords="188,56,336,83"/>
-<area shape="rect" id="node4" href="$classsm_1_1PurchaseResponse.html" title=" " alt="" coords="176,107,348,133"/>
-<area shape="rect" id="node5" href="$classsm_1_1RegisterResponse.html" title=" " alt="" coords="179,157,345,184"/>
-<area shape="rect" id="node6" href="$classsm_1_1SellResponse.html" title=" " alt="" coords="193,208,331,235"/>
-<area shape="rect" id="node7" href="$classsm_1_1ServerErrorResponse.html" title=" " alt="" coords="169,259,355,285"/>
+<area shape="rect" id="node3" href="$classsm_1_1BalanceResponse.html" title=" " alt="" coords="179,56,345,83"/>
+<area shape="rect" id="node4" href="$classsm_1_1LoginResponse.html" title=" " alt="" coords="188,107,336,133"/>
+<area shape="rect" id="node5" href="$classsm_1_1PurchaseResponse.html" title=" " alt="" coords="176,157,348,184"/>
+<area shape="rect" id="node6" href="$classsm_1_1RegisterResponse.html" title=" " alt="" coords="179,208,345,235"/>
+<area shape="rect" id="node7" href="$classsm_1_1SellResponse.html" title=" " alt="" coords="193,259,331,285"/>
+<area shape="rect" id="node8" href="$classsm_1_1ServerErrorResponse.html" title=" " alt="" coords="169,309,355,336"/>
 </map>
