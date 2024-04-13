@@ -1,32 +1,32 @@
-#include "login.hpp"
+#include "sell.hpp"
 
 #include "../error/bad_request.hpp"
+#include "services/market_service.hpp"
 #include "utility/messages.hpp"
 #include "utility/net_helper.hpp"
 #include "utility/config.hpp"
 
 namespace sm {
-    LoginResponse::LoginResponse(
+    SellResponse::SellResponse(
         RequestInfo request, 
-        service::AuthService::LoginUserData loginData)
+        std::string_view userId,
+        std::string_view sellData)
         : Response(request),
-          _loginData(loginData)
+          _userId(userId),
+          _sellData(sellData)
     {}
 
-    http::message_generator LoginResponse::create() const {
+    http::message_generator SellResponse::create() const {
         using namespace netHelper;
         using namespace service;
 
-        AuthService::errorCode authError{};
-        const auto userId = AuthService::loginUser(_loginData, authError);
-        if (authError != AuthService::errorCode::noError)
-            return BadRequestResponse{ _request, messages::errors::INVALID_AUTH_LOGIN }.create();
-
-        if (userId.empty())
-            return BadRequestResponse{ _request, messages::errors::INVALID_AUTH_LOGIN }.create();
+        MarketService::errorCode marketError{};
+        MarketService::sell(_userId, _sellData, marketError);
+        if (marketError != MarketService::errorCode::noError)
+            return BadRequestResponse{ _request, messages::errors::INTERNAL_ERROR_GENERAL }.create();
 
         http::response<http::string_body> response{ 
-            http::status::ok,
+            http::status::created, 
             _request.httpVersion 
         };
 
@@ -37,7 +37,7 @@ namespace sm {
         );
 
         response.keep_alive(_request.keepAlive);
-        response.body() = userId;
+        response.body() = messages::success::SOLD;
         response.prepare_payload();
 
         return response;

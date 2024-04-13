@@ -13,7 +13,6 @@ find_package(Boost 1.82 REQUIRED
         program_options
         url)
 find_package(SQLiteCpp REQUIRED)
-find_package(cpp-jwt REQUIRED)
 find_package(GTest REQUIRED)
 
 add_library(${PROJECT_NAME} STATIC)
@@ -36,20 +35,25 @@ target_sources(${PROJECT_NAME}
         src/responses/method_handler.cpp
         src/responses/error/bad_request.cpp
         src/responses/error/server_error.cpp
-        # src/responses/authorized.cpp
+        src/responses/authorized.cpp
         src/responses/auth/login.cpp
         src/responses/auth/register.cpp
+        src/responses/market/purchase.cpp
+        src/responses/market/sell.cpp
 
         # services
+        src/services/db_service.cpp
         src/services/auth_service.cpp
         src/services/user_service.cpp
-        src/services/db_service.cpp
+        src/services/market_service.cpp
+        src/services/request_service.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
     PRIVATE
         # where the library itself will look for its internal headers
         ${CMAKE_CURRENT_SOURCE_DIR}/src
+        ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/json/include
     PUBLIC
         # where top-level project will look for the library's public headers
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

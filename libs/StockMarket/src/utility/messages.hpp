@@ -55,7 +55,8 @@ namespace sm {
             inline static const std::string INVALID_METHOD = "Недопустимый HTTP-метод";
             inline static const std::string INVALID_REQUEST = "Недопустимый запрос";
             inline static const std::string INVALID_AUTH_CREATE = "Ошибка создания пользователя";
-            inline static const std::string INVALID_AUTH_LOGIN = "Ошибка аутентификации";
+            inline static const std::string INVALID_AUTH_LOGIN = "Неверные данные";
+            inline static const std::string INVALID_AUTH = "Ошибка аутентификации";
             inline static const std::string INTERNAL_ERROR_GENERAL = "Возникла ошибка";
             inline static const std::string INTERNAL_ERROR = "Возникла ошибка: ";
         };
@@ -64,6 +65,8 @@ namespace sm {
             // http success responses
             inline static const std::string USER_CREATED = "Пользователь успешно создан";
             inline static const std::string USER_LOGGED = "Пользователь авторизован";
+            inline static const std::string PURCHASED = "Заявка на покупку успешно создана";
+            inline static const std::string SOLD = "Заявка на продажу успешно создана";
         };
     };
 }

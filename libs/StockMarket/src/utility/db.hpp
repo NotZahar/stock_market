@@ -5,10 +5,10 @@
 
 namespace sm::db {
     struct sanitizer {
-        static bool check(std::string_view value) {
+        static bool isValid(std::string_view value) {
             return std::regex_match(value.cbegin(), value.cend(), queryRegex);
         }
 
-        inline static const std::regex queryRegex{ "^[a-zA-Z0-9@\\. ]+$" };
+        inline static const std::regex queryRegex{ "^[a-zA-Z0-9@\\.\\- ]+$" };
     };
 }

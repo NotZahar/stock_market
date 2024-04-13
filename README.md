@@ -3,6 +3,7 @@
 ##### Dependencies:
 - Boost v1.82
 - SQLiteCpp v3.3 [ref](https://github.com/SRombauts/SQLiteCpp)
+- (json v3.11 [ref](https://github.com/nlohmann/json) - header only third-party lib)
 - CMake v3.28
 - Doxygen v1.9
 

@@ -1,5 +1,7 @@
 #include "user_service.hpp"
 
+#include <cassert>
+
 #include "db_service.hpp"
 
 namespace sm::service {
@@ -10,7 +12,7 @@ namespace sm::service {
             VALUES(?, ?, ?);
         )";
 
-    const std::string UserService::_getUserQuery = 
+    const std::string UserService::_getUserEmailQuery = 
         R"(
             SELECT 
                 id, email, balance
@@ -18,6 +20,16 @@ namespace sm::service {
                 user
             WHERE
                 email IS ?
+        )";
+    
+    const std::string UserService::_getUserIdQuery = 
+        R"(
+            SELECT 
+                id, email, balance
+            FROM 
+                user
+            WHERE
+                id IS ?
         )";
 
     void UserService::create(User user, errorCode& error) noexcept {
@@ -45,7 +57,7 @@ namespace sm::service {
         }
     }
 
-    bool UserService::exists(std::string_view email, errorCode& error) noexcept {
+    std::string UserService::getId(std::string_view email, errorCode& eCode) noexcept {
         DBService::errorCode selectError{};
         std::vector<std::string> values;
         constexpr int SCHEMA_SIZE = 3;
@@ -53,20 +65,50 @@ namespace sm::service {
         values.emplace_back(email);
         
         const auto users = DBService::select(
-            _getUserQuery, 
+            _getUserEmailQuery, 
             std::move(values),
             SCHEMA_SIZE,
             selectError
         );
         
         if (selectError != DBService::errorCode::noError) {
-            error = errorCode::badData;
+            eCode = errorCode::badData;
+            return {};
+        }
+
+        if (users.empty())
+            return {};
+
+        assert(users.size() == 1);
+        auto rawUser = users.front();
+        auto rawUserIt = rawUser.cbegin();
+        
+        const std::string dbId = *rawUserIt;
+        return dbId;
+    }
+
+    bool UserService::exists(std::string_view userId, errorCode& eCode) noexcept {
+        DBService::errorCode selectError{};
+        std::vector<std::string> values;
+        constexpr int SCHEMA_SIZE = 3;
+        
+        values.emplace_back(userId);
+        
+        const auto users = DBService::select(
+            _getUserIdQuery, 
+            std::move(values),
+            SCHEMA_SIZE,
+            selectError
+        );
+        
+        if (selectError != DBService::errorCode::noError) {
+            eCode = errorCode::badData;
             return false;
         }
 
         if (users.empty())
             return false;
-        
+
         return true;
-    } 
+    }
 }

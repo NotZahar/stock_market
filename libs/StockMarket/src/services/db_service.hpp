@@ -34,6 +34,7 @@ namespace sm::service {
             errorCode& error) noexcept;
 
         inline static constexpr int ZERO_CHANGES = 0;
+        inline static const std::string NULL_VALUE = "NULL";
 
     private:
         static void bindValues(SQLite::Statement& query, std::vector<std::string> values);

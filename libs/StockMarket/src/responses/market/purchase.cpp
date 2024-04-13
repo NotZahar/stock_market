@@ -1,32 +1,32 @@
-#include "login.hpp"
+#include "purchase.hpp"
 
 #include "../error/bad_request.hpp"
+#include "services/market_service.hpp"
 #include "utility/messages.hpp"
 #include "utility/net_helper.hpp"
 #include "utility/config.hpp"
 
 namespace sm {
-    LoginResponse::LoginResponse(
+    PurchaseResponse::PurchaseResponse(
         RequestInfo request, 
-        service::AuthService::LoginUserData loginData)
+        std::string_view userId,
+        std::string_view purchaseData)
         : Response(request),
-          _loginData(loginData)
+          _userId(userId),
+          _purchaseData(purchaseData)
     {}
 
-    http::message_generator LoginResponse::create() const {
+    http::message_generator PurchaseResponse::create() const {
         using namespace netHelper;
         using namespace service;
 
-        AuthService::errorCode authError{};
-        const auto userId = AuthService::loginUser(_loginData, authError);
-        if (authError != AuthService::errorCode::noError)
-            return BadRequestResponse{ _request, messages::errors::INVALID_AUTH_LOGIN }.create();
-
-        if (userId.empty())
-            return BadRequestResponse{ _request, messages::errors::INVALID_AUTH_LOGIN }.create();
+        MarketService::errorCode marketError{};
+        MarketService::purchase(_userId, _purchaseData, marketError);
+        if (marketError != MarketService::errorCode::noError)
+            return BadRequestResponse{ _request, messages::errors::INTERNAL_ERROR_GENERAL }.create();
 
         http::response<http::string_body> response{ 
-            http::status::ok,
+            http::status::created, 
             _request.httpVersion 
         };
 
@@ -37,7 +37,7 @@ namespace sm {
         );
 
         response.keep_alive(_request.keepAlive);
-        response.body() = userId;
+        response.body() = messages::success::PURCHASED;
         response.prepare_payload();
 
         return response;

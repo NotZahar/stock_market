@@ -1,6 +1,5 @@
 #include "authorized.hpp"
 
-#include "login.hpp"
 #include "error/bad_request.hpp"
 #include "../services/auth_service.hpp"
 #include "../utility/messages.hpp"
@@ -14,18 +13,16 @@ namespace sm {
     {}
 
     http::message_generator Authorized::response() const {
-        AuthService::errorCode authErrorCode{};
-        AuthService::authenticate(_requestParams, authErrorCode);
-        switch (authErrorCode) {
-            case AuthService::errorCode::noData:
-                return LoginResponse{ _handler->getRequestInfo() }.create();
-            case AuthService::errorCode::badData:
-                return BadRequestResponse{ 
-                    _handler->getRequestInfo(), 
-                    messages::errors::INVALID_AUTH 
-                }.create();
-            default:
-                return _handler->response();        
-        }
+        service::AuthService::errorCode authErrorCode{};
+        const bool authenticated = service::AuthService::authenticateUser(
+            _requestParams, 
+            authErrorCode);
+
+        if (!authenticated)
+            return BadRequestResponse{ 
+                _handler->getRequestInfo(), 
+                messages::errors::INVALID_AUTH }.create();
+
+        return _handler->response();
     }
 }

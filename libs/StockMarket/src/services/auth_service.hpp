@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string_view>
+#include <unordered_map>
 
 namespace sm::service {
     /*!
@@ -26,7 +27,10 @@ namespace sm::service {
 
         ~AuthService() = default;
 
-        static void registerUser(RegisterUserData registerData, errorCode& eCode);
-        static bool loginUser(LoginUserData loginData, errorCode& eCode);
+        static void registerUser(RegisterUserData registerData, errorCode& eCode) noexcept;
+        static std::string loginUser(LoginUserData loginData, errorCode& eCode) noexcept;
+        static bool authenticateUser(
+            const std::unordered_map<std::string, std::string>& params, 
+            errorCode& eCode) noexcept;
     };
 }

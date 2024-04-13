@@ -2,8 +2,9 @@
 
 #include "responses/auth/register.hpp"
 #include "responses/auth/login.hpp"
-// #include "responses/authorized.hpp"
-// #include "responses/get.hpp"
+#include "responses/authorized.hpp"
+#include "responses/market/purchase.hpp"
+#include "responses/market/sell.hpp"
 #include "responses/post.hpp"
 #include "responses/error/bad_request.hpp"
 #include "services/auth_service.hpp"
@@ -16,16 +17,18 @@ namespace sm {
     http::message_generator Router::makeResponse(http::request<http::string_body> request) {
         const http::verb requestMethod = request.method();
         const url requestURL{ request.target() };
+        const std::string requestBody = request.body();
         const Response::RequestInfo requestInfo = { request.version(), request.keep_alive() };
         const std::unordered_map<std::string, std::string> requestParams = requestURL.getParams();
 
         const auto requestSegments = requestURL.getSegments();
-        if (requestSegments.empty() || routeSegments.right.count(requestSegments.front()) == 0)
+        if (requestSegments.empty() || routes::routeSegments.right.count(requestSegments.front()) == 0)
             return BadRequestResponse{ requestInfo }.create();
 
-        const routeSegment route = routeSegments.right.find(requestSegments.front())->second;
+        const routes::segment route =
+            routes::routeSegments.right.find(requestSegments.front())->second;
         switch (route) {
-            case routeSegment::auth_register: {
+            case routes::segment::auth_register: {
                 if (!url::paramsExists(requestParams, { urlParam::email }))
                     return BadRequestResponse{ requestInfo }.create();
                 
@@ -38,7 +41,7 @@ namespace sm {
                         }
                     )
                 }.response();
-            } case routeSegment::auth_login: {
+            } case routes::segment::auth_login: {
                 if (!url::paramsExists(requestParams, { urlParam::email }))
                     return BadRequestResponse{ requestInfo }.create();
                 
@@ -49,6 +52,34 @@ namespace sm {
                         service::AuthService::LoginUserData{
                             requestParams.at(urlParams.left.find(urlParam::email)->second)
                         }
+                    )
+                }.response();
+            } case routes::segment::market_purchase: {
+                if (!url::paramsExists(requestParams, { urlParam::user }))
+                    return BadRequestResponse{ requestInfo }.create();
+
+                return Authorized{
+                    requestParams,
+                    std::make_unique<Post>(
+                        requestMethod, 
+                        std::make_unique<PurchaseResponse>(
+                            requestInfo,
+                            requestParams.at(urlParams.left.find(urlParam::user)->second),
+                            requestBody)
+                    )
+                }.response();
+            } case routes::segment::market_sell: {
+                if (!url::paramsExists(requestParams, { urlParam::user }))
+                    return BadRequestResponse{ requestInfo }.create();
+
+                return Authorized{
+                    requestParams,
+                    std::make_unique<Post>(
+                        requestMethod, 
+                        std::make_unique<SellResponse>(
+                            requestInfo,
+                            requestParams.at(urlParams.left.find(urlParam::user)->second),
+                            requestBody)
                     )
                 }.response();
             } default: { 

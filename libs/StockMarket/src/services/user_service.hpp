@@ -23,10 +23,12 @@ namespace sm::service {
         ~UserService() = default;
         
         static void create(User user, errorCode& error) noexcept;
-        static bool exists(std::string_view email, errorCode& error) noexcept;
+        static std::string getId(std::string_view email, errorCode& eCode) noexcept;
+        static bool exists(std::string_view userId, errorCode& eCode) noexcept;
 
     private:
         static const std::string _createUserQuery;
-        static const std::string _getUserQuery;
+        static const std::string _getUserEmailQuery;
+        static const std::string _getUserIdQuery;
     };
 }
