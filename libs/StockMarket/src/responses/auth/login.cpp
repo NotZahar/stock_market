@@ -18,8 +18,11 @@ namespace sm {
         using namespace service;
 
         AuthService::errorCode authError{};
-        AuthService::loginUser(_loginData, authError);
+        const bool logged = AuthService::loginUser(_loginData, authError);
         if (authError != AuthService::errorCode::noError)
+            return BadRequestResponse{ _request, messages::errors::INVALID_AUTH_LOGIN }.create();
+
+        if (!logged)
             return BadRequestResponse{ _request, messages::errors::INVALID_AUTH_LOGIN }.create();
 
         http::response<http::string_body> response{ 

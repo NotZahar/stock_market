@@ -4,7 +4,7 @@
 
 namespace sm {
     /*!
-        \brief Класс-родитель для всех http-ответов
+        \brief Родитель для всех http-ответов
     */
     class Response {
     public:

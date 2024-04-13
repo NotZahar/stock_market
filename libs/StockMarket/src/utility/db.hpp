@@ -9,6 +9,6 @@ namespace sm::db {
             return std::regex_match(value.cbegin(), value.cend(), queryRegex);
         }
 
-        inline static const std::regex queryRegex{ "^[a-zA-Z0-9.@ ]+$" };
+        inline static const std::regex queryRegex{ "^[a-zA-Z0-9@\\. ]+$" };
     };
 }

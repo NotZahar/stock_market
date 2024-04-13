@@ -6,7 +6,7 @@
 
 namespace sm {
     /*!
-        \brief Декоратор-родитель для проверки валидности http-запроса
+        \brief Декоратор для проверки валидности http-запроса
     */
     class MethodHandler {
     public:

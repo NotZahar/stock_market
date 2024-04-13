@@ -39,7 +39,7 @@ namespace sm::service {
 
         UserService::errorCode loginError{};
         const bool userExists = UserService::exists(email, loginError);
-        
+
         if (loginError != UserService::errorCode::noError) {
             eCode = errorCode::badData;
             return false;

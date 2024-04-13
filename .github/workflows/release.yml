@@ -33,22 +33,6 @@ jobs:
           cmake -DCMAKE_BUILD_TYPE=RELEASE ..
           sudo cmake --build . --target install
 
-      - name: Clone arun11299/cpp-jwt repository
-        uses: GuillaumeFalourd/clone-github-repo-action@v2.3
-        with:
-          depth: 1
-          branch: 'master'
-          owner: 'arun11299'
-          repository: 'cpp-jwt'
-
-      - name: Build cpp-jwt
-        run: |
-          cd cpp-jwt
-          mkdir build
-          cd build
-          cmake -DCMAKE_BUILD_TYPE=RELEASE ..
-          sudo cmake --build . --target install
-
       - name: Install Boost
         uses: MarkusJx/install-boost@v2.4.4
         id: install_boost
@@ -64,8 +48,8 @@ jobs:
             -DBoost_LIBRARY_DIRS=${{steps.install_boost.outputs.BOOST_ROOT}}/lib
         env:
             BOOST_ROOT: ${{ steps.install_boost.outputs.BOOST_ROOT }}
-      - run: cmake --build . --target install
-      - run: cmake --build . --target package
+      - run: cmake --build . --target install -j 4
+      - run: cmake --build . --target package -j 4
       - run: cd ./libs/StockMarket/ && ctest
       
       - name: Create Release
