@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>stock_market: Класс sm::service::UserService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">stock_market
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+   <div id="projectbrief">Биржа с клиент-серверной архитектурой</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacesm.html">sm</a></li><li class="navelem"><a class="el" href="namespacesm_1_1service.html">service</a></li><li class="navelem"><a class="el" href="classsm_1_1service_1_1UserService.html">UserService</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="classsm_1_1service_1_1UserService-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс sm::service::UserService</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="user__service_8hpp_source.html">user_service.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsm_1_1service_1_1UserService_1_1User.html">User</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a491a372f6af6f908482d67004223f0c0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> { <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0af85f07b4585cce70e6e3bd3407bfa7fb">noError</a>
+, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0a4fdfb7ef5530c261a3142144fb0aadc0">alreadyExists</a>
+, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0a834bd983f7baa524f9ef91c1e8fa7630">badData</a>
+ }</td></tr>
+<tr class="separator:a491a372f6af6f908482d67004223f0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a44f3884c9119959e37fa0056ebe0765b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a44f3884c9119959e37fa0056ebe0765b">UserService</a> ()=default</td></tr>
+<tr class="separator:a44f3884c9119959e37fa0056ebe0765b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2ff5622c1129f6e16c3b89ec23177bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#ac2ff5622c1129f6e16c3b89ec23177bf">~UserService</a> ()=default</td></tr>
+<tr class="separator:ac2ff5622c1129f6e16c3b89ec23177bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a6f0653bcece28db50fd163c6040b12e7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a6f0653bcece28db50fd163c6040b12e7">create</a> (<a class="el" href="structsm_1_1service_1_1UserService_1_1User.html">User</a> user, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;error) noexcept</td></tr>
+<tr class="separator:a6f0653bcece28db50fd163c6040b12e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07fcb7453578d9b85c5ebda37a1885c2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a07fcb7453578d9b85c5ebda37a1885c2">exists</a> (std::string_view email, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;error) noexcept</td></tr>
+<tr class="separator:a07fcb7453578d9b85c5ebda37a1885c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Перечисления</h2>
+<a id="a491a372f6af6f908482d67004223f0c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a491a372f6af6f908482d67004223f0c0">&#9670;&nbsp;</a></span>errorCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">sm::service::UserService::errorCode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a491a372f6af6f908482d67004223f0c0af85f07b4585cce70e6e3bd3407bfa7fb"></a>noError&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a491a372f6af6f908482d67004223f0c0a4fdfb7ef5530c261a3142144fb0aadc0"></a>alreadyExists&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a491a372f6af6f908482d67004223f0c0a834bd983f7baa524f9ef91c1e8fa7630"></a>badData&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a44f3884c9119959e37fa0056ebe0765b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f3884c9119959e37fa0056ebe0765b">&#9670;&nbsp;</a></span>UserService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sm::service::UserService::UserService </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2ff5622c1129f6e16c3b89ec23177bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2ff5622c1129f6e16c3b89ec23177bf">&#9670;&nbsp;</a></span>~UserService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sm::service::UserService::~UserService </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a6f0653bcece28db50fd163c6040b12e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f0653bcece28db50fd163c6040b12e7">&#9670;&nbsp;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sm::service::UserService::create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsm_1_1service_1_1UserService_1_1User.html">User</a>&#160;</td>
+          <td class="paramname"><em>user</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07fcb7453578d9b85c5ebda37a1885c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07fcb7453578d9b85c5ebda37a1885c2">&#9670;&nbsp;</a></span>exists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool sm::service::UserService::exists </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>email</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>libs/StockMarket/src/services/<a class="el" href="user__service_8hpp_source.html">user_service.hpp</a></li>
+<li>libs/StockMarket/src/services/<a class="el" href="user__service_8cpp.html">user_service.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

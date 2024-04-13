@@ -1,0 +1,7 @@
+<map id="sm::Response" name="sm::Response">
+<area shape="rect" id="node1" title="Класс&#45;родитель для всех http&#45;ответов" alt="" coords="5,81,119,108"/>
+<area shape="rect" id="node2" href="$classsm_1_1BadRequestResponse.html" title=" " alt="" coords="167,5,357,32"/>
+<area shape="rect" id="node3" href="$classsm_1_1LoginResponse.html" title=" " alt="" coords="188,56,336,83"/>
+<area shape="rect" id="node4" href="$classsm_1_1RegisterResponse.html" title=" " alt="" coords="179,107,345,133"/>
+<area shape="rect" id="node5" href="$classsm_1_1ServerErrorResponse.html" title=" " alt="" coords="169,157,355,184"/>
+</map>
