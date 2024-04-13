@@ -1,0 +1,91 @@
+name: 'stock_market release'
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    permissions: write-all
+    steps:
+      - run: sudo apt update && sudo apt install software-properties-common -y
+      - run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+      - run: sudo apt update
+      - run: sudo apt install gcc-13 g++-13 cmake libgtest-dev -y
+      - run: sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 13 --slave /usr/bin/g++ g++ /usr/bin/g++-13
+      
+      - name: Clone SRombauts/SQLiteCpp repository
+        uses: GuillaumeFalourd/clone-github-repo-action@v2.3
+        with:
+          depth: 1
+          branch: 'master'
+          owner: 'SRombauts'
+          repository: 'SQLiteCpp'
+
+      - name: Build SQLiteCpp
+        run: |
+          cd SQLiteCpp
+          mkdir build
+          cd build
+          cmake -DCMAKE_BUILD_TYPE=RELEASE ..
+          sudo cmake --build . --target install
+
+      - name: Clone arun11299/cpp-jwt repository
+        uses: GuillaumeFalourd/clone-github-repo-action@v2.3
+        with:
+          depth: 1
+          branch: 'master'
+          owner: 'arun11299'
+          repository: 'cpp-jwt'
+
+      - name: Build cpp-jwt
+        run: |
+          cd cpp-jwt
+          mkdir build
+          cd build
+          cmake -DCMAKE_BUILD_TYPE=RELEASE ..
+          sudo cmake --build . --target install
+
+      - name: Install Boost
+        uses: MarkusJx/install-boost@v2.4.4
+        id: install_boost
+        with:
+            boost_version: 1.82.0
+            platform_version: 22.04
+            boost_install_dir: /home/runner/boost
+            toolset: gcc
+
+      - uses: actions/checkout@v3
+      - run: cmake . -DCMAKE_BUILD_TYPE=Release -DPATCH_VERSION=${{ github.run_number }}
+            -DBoost_INCLUDE_DIR=${{steps.install_boost.outputs.BOOST_ROOT}}/include
+            -DBoost_LIBRARY_DIRS=${{steps.install_boost.outputs.BOOST_ROOT}}/lib
+        env:
+            BOOST_ROOT: ${{ steps.install_boost.outputs.BOOST_ROOT }}
+      - run: cmake --build . --target install
+      - run: cmake --build . --target package
+      - run: cd ./libs/StockMarket/ && ctest
+      
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.run_number }}
+          release_name: v${{ github.run_number }}
+          draft: false
+          prerelease: false
+      
+      - name: Upload Release Asset
+        id: upload_release_asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./stock_market-0.0.${{ github.run_number }}-Linux.deb
+          asset_name: stock_market-0.0.${{ github.run_number }}-Linux.deb
+          asset_content_type: application/vnd.debian.binary-package
