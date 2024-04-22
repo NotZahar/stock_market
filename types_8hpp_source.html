@@ -83,29 +83,30 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;boost/beast/core.hpp&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;boost/beast/http.hpp&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;boost/asio/use_awaitable.hpp&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;boost/url.hpp&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesm.html">sm</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">namespace </span>core = boost::core;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">namespace </span>asio = boost::asio;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">namespace </span>ip = asio::ip;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">namespace </span>fs = std::filesystem;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">namespace </span>beast = boost::beast;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">namespace </span>http = beast::http;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">namespace </span>urls = boost::urls;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespacesm.html#aebf61bf03f1190a04ad85964d4de65c7">   24</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacesm.html#aebf61bf03f1190a04ad85964d4de65c7">options_description</a> = <a class="code" href="namespacesm.html#aebf61bf03f1190a04ad85964d4de65c7">boost::program_options::options_description</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespacesm.html#acbe0e6fefd1f86d649d47957fdbcb257">   25</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacesm.html#acbe0e6fefd1f86d649d47957fdbcb257">tcp_stream</a> = <span class="keyword">typename</span> beast::tcp_stream::rebind_executor&lt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        asio::use_awaitable_t&lt;&gt;::executor_with_default&lt;asio::any_io_executor&gt;&gt;::other;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="types_8hpp.html#a8d6910a8a5ad8c013f505be11e1e1d52">   31</a></span>&#160;<span class="preprocessor">    #define SM_NCM(T) T(const T&amp;) = delete; \</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">        T&amp; operator=(const T&amp;) = delete;    \</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">        T(T&amp;&amp;) = delete;                    \</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">        T&amp; operator=(T&amp;&amp;) = delete;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">}</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;boost/asio/thread_pool.hpp&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;boost/url.hpp&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesm.html">sm</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">namespace </span>core = boost::core;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">namespace </span>asio = boost::asio;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">namespace </span>ip = asio::ip;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">namespace </span>fs = std::filesystem;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">namespace </span>beast = boost::beast;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">namespace </span>http = beast::http;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">namespace </span>urls = boost::urls;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespacesm.html#aebf61bf03f1190a04ad85964d4de65c7">   25</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacesm.html#aebf61bf03f1190a04ad85964d4de65c7">options_description</a> = <a class="code" href="namespacesm.html#aebf61bf03f1190a04ad85964d4de65c7">boost::program_options::options_description</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespacesm.html#acbe0e6fefd1f86d649d47957fdbcb257">   26</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacesm.html#acbe0e6fefd1f86d649d47957fdbcb257">tcp_stream</a> = <span class="keyword">typename</span> beast::tcp_stream::rebind_executor&lt;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        asio::use_awaitable_t&lt;&gt;::executor_with_default&lt;asio::any_io_executor&gt;&gt;::other;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="types_8hpp.html#a8d6910a8a5ad8c013f505be11e1e1d52">   32</a></span>&#160;<span class="preprocessor">    #define SM_NCM(T) T(const T&amp;) = delete; \</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">        T&amp; operator=(const T&amp;) = delete;    \</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">        T(T&amp;&amp;) = delete;                    \</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">        T&amp; operator=(T&amp;&amp;) = delete;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">}</span></div>
 <div class="ttc" id="anamespacesm_html"><div class="ttname"><a href="namespacesm.html">sm</a></div><div class="ttdef"><b>Definition:</b> logger.hpp:5</div></div>
-<div class="ttc" id="anamespacesm_html_acbe0e6fefd1f86d649d47957fdbcb257"><div class="ttname"><a href="namespacesm.html#acbe0e6fefd1f86d649d47957fdbcb257">sm::tcp_stream</a></div><div class="ttdeci">typename beast::tcp_stream::rebind_executor&lt; asio::use_awaitable_t&lt;&gt;::executor_with_default&lt; asio::any_io_executor &gt; &gt;::other tcp_stream</div><div class="ttdef"><b>Definition:</b> types.hpp:26</div></div>
-<div class="ttc" id="anamespacesm_html_aebf61bf03f1190a04ad85964d4de65c7"><div class="ttname"><a href="namespacesm.html#aebf61bf03f1190a04ad85964d4de65c7">sm::options_description</a></div><div class="ttdeci">boost::program_options::options_description options_description</div><div class="ttdef"><b>Definition:</b> types.hpp:24</div></div>
+<div class="ttc" id="anamespacesm_html_acbe0e6fefd1f86d649d47957fdbcb257"><div class="ttname"><a href="namespacesm.html#acbe0e6fefd1f86d649d47957fdbcb257">sm::tcp_stream</a></div><div class="ttdeci">typename beast::tcp_stream::rebind_executor&lt; asio::use_awaitable_t&lt;&gt;::executor_with_default&lt; asio::any_io_executor &gt; &gt;::other tcp_stream</div><div class="ttdef"><b>Definition:</b> types.hpp:27</div></div>
+<div class="ttc" id="anamespacesm_html_aebf61bf03f1190a04ad85964d4de65c7"><div class="ttname"><a href="namespacesm.html#aebf61bf03f1190a04ad85964d4de65c7">sm::options_description</a></div><div class="ttdeci">boost::program_options::options_description options_description</div><div class="ttdef"><b>Definition:</b> types.hpp:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

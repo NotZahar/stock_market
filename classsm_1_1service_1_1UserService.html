@@ -90,6 +90,7 @@ $(function() {
 Открытые типы</h2></td></tr>
 <tr class="memitem:a491a372f6af6f908482d67004223f0c0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> { <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0af85f07b4585cce70e6e3bd3407bfa7fb">noError</a>
 , <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0a4fdfb7ef5530c261a3142144fb0aadc0">alreadyExists</a>
+, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0a69957037e3b1ca0136fd7fac5915094c">internalError</a>
 , <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0a834bd983f7baa524f9ef91c1e8fa7630">badData</a>
  }</td></tr>
 <tr class="separator:a491a372f6af6f908482d67004223f0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -105,6 +106,10 @@ $(function() {
 Открытые статические члены</h2></td></tr>
 <tr class="memitem:a010d866a3a4e7d1b0ec985527ab8018d"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a010d866a3a4e7d1b0ec985527ab8018d">getBalance</a> (std::string_view userId, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;eCode) noexcept</td></tr>
 <tr class="separator:a010d866a3a4e7d1b0ec985527ab8018d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a528f61a019b04787602ce18c61f448ec"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a528f61a019b04787602ce18c61f448ec">decreaseBalance</a> (std::string_view userId, const int difference, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;eCode) noexcept</td></tr>
+<tr class="separator:a528f61a019b04787602ce18c61f448ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8fe88264a310d9598879bc4ca2abdf4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#aa8fe88264a310d9598879bc4ca2abdf4">increaseBalance</a> (std::string_view userId, const int difference, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;eCode) noexcept</td></tr>
+<tr class="separator:aa8fe88264a310d9598879bc4ca2abdf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f0653bcece28db50fd163c6040b12e7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a6f0653bcece28db50fd163c6040b12e7">create</a> (<a class="el" href="structsm_1_1service_1_1UserService_1_1User.html">User</a> user, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;error) noexcept</td></tr>
 <tr class="separator:a6f0653bcece28db50fd163c6040b12e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cbada8a895fc46d8ded2f6951c1b18e"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsm_1_1service_1_1UserService.html#a6cbada8a895fc46d8ded2f6951c1b18e">getId</a> (std::string_view email, <a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;eCode) noexcept</td></tr>
@@ -140,6 +145,7 @@ $(function() {
 <table class="fieldtable">
 <tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a491a372f6af6f908482d67004223f0c0af85f07b4585cce70e6e3bd3407bfa7fb"></a>noError&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a491a372f6af6f908482d67004223f0c0a4fdfb7ef5530c261a3142144fb0aadc0"></a>alreadyExists&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a491a372f6af6f908482d67004223f0c0a69957037e3b1ca0136fd7fac5915094c"></a>internalError&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a491a372f6af6f908482d67004223f0c0a834bd983f7baa524f9ef91c1e8fa7630"></a>badData&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
@@ -217,6 +223,48 @@ $(function() {
           <td></td>
           <td class="paramtype"><a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;&#160;</td>
           <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a528f61a019b04787602ce18c61f448ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a528f61a019b04787602ce18c61f448ec">&#9670;&nbsp;</a></span>decreaseBalance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sm::service::UserService::decreaseBalance </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>difference</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;&#160;</td>
+          <td class="paramname"><em>eCode</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -319,6 +367,48 @@ $(function() {
           <td>(</td>
           <td class="paramtype">std::string_view&#160;</td>
           <td class="paramname"><em>email</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classsm_1_1service_1_1UserService.html#a491a372f6af6f908482d67004223f0c0">errorCode</a> &amp;&#160;</td>
+          <td class="paramname"><em>eCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8fe88264a310d9598879bc4ca2abdf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8fe88264a310d9598879bc4ca2abdf4">&#9670;&nbsp;</a></span>increaseBalance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sm::service::UserService::increaseBalance </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>difference</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

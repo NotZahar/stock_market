@@ -1,7 +1,8 @@
 <map id="libs/StockMarket/src/services/request_service.hpp" name="libs/StockMarket/src/services/request_service.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="99,5,314,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,64,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="89,95,186,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="211,95,341,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="366,95,498,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="97,5,311,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,48,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="72,95,131,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="155,95,253,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="277,95,408,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="433,95,565,121"/>
 </map>
