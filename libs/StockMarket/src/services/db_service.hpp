@@ -33,6 +33,11 @@ namespace sm::service {
             std::vector<std::string> values,
             errorCode& error) noexcept;
 
+        static int update(
+            std::string_view rawQuery,
+            std::vector<std::string> values,
+            errorCode& error) noexcept;
+
         inline static constexpr int ZERO_CHANGES = 0;
         inline static const std::string NULL_VALUE = "NULL";
 

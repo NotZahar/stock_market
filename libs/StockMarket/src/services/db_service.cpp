@@ -49,6 +49,25 @@ namespace sm::service {
         return returnValue;
     }
 
+    int DBService::update(
+            std::string_view rawQuery,
+            std::vector<std::string> values,
+            errorCode& error) noexcept {
+        int returnValue = ZERO_CHANGES;
+        try {
+            SQLite::Database database(paths::dbPath, SQLite::OPEN_READWRITE);
+            SQLite::Statement query(database, std::string{ rawQuery });
+            bindValues(query, std::move(values));
+ 
+            returnValue = query.exec();
+        } catch (const std::exception& exception) {
+            Logger::instance().err(exception.what());
+            error = errorCode::writeError;
+        }
+
+        return returnValue;
+    }
+
     void DBService::bindValues(SQLite::Statement& query, std::vector<std::string> values) {
         for (std::size_t i = 0, size = values.size(); i < size; ++i)
             query.bind(i + 1, values[i]);

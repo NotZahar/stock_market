@@ -34,6 +34,26 @@ namespace sm::service {
                 id IS ?
         )";
 
+    const std::string UserService::_decreaseBalanceQuery = 
+        R"(
+            UPDATE 
+                user
+            SET
+                balance = balance - ?
+            WHERE
+                id IS ?
+        )";
+
+    const std::string UserService::_increaseBalanceQuery = 
+        R"(
+            UPDATE 
+                user
+            SET
+                balance = balance + ?
+            WHERE
+                id IS ?
+        )";
+
     std::string UserService::getBalance(std::string_view userId, errorCode& eCode) noexcept {
         if (!db::sanitizer::isValid(userId)) {
             eCode = errorCode::badData;
@@ -68,6 +88,60 @@ namespace sm::service {
         
         const std::string dbBalance = *rawUserIt;
         return dbBalance;
+    }
+
+    void UserService::decreaseBalance(
+            std::string_view userId, 
+            const int difference, 
+            errorCode& eCode) noexcept {
+        DBService::errorCode updateError{};
+        std::vector<std::string> values;
+        
+        values.emplace_back(std::to_string(difference));
+        values.emplace_back(userId);
+        
+        const int changes = DBService::update(
+            _decreaseBalanceQuery,
+            std::move(values),
+            updateError
+        );
+        
+        if (updateError != DBService::errorCode::noError) {
+            eCode = errorCode::internalError;
+            return;
+        }
+
+        if (changes == DBService::ZERO_CHANGES) {
+            eCode = errorCode::internalError;
+            return;
+        }
+    }
+
+    void UserService::increaseBalance(
+            std::string_view userId, 
+            const int difference, 
+            errorCode& eCode) noexcept {
+        DBService::errorCode updateError{};
+        std::vector<std::string> values;
+     
+        values.emplace_back(std::to_string(difference));
+        values.emplace_back(userId);
+        
+        const int changes = DBService::update(
+            _increaseBalanceQuery,
+            std::move(values),
+            updateError
+        );
+        
+        if (updateError != DBService::errorCode::noError) {
+            eCode = errorCode::internalError;
+            return;
+        }
+
+        if (changes == DBService::ZERO_CHANGES) {
+            eCode = errorCode::internalError;
+            return;
+        }
     }
 
     void UserService::create(User user, errorCode& error) noexcept {

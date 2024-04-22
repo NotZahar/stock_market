@@ -1,5 +1,6 @@
 #pragma once
 
+#include <list>
 #include <string>
 #include <string_view>
 
@@ -37,15 +38,6 @@ namespace sm::service {
             std::string_view client_id;
         };
 
-        RequestService() = default;
-
-        ~RequestService() = default;
-        
-        static void create(Request request, errorCode& error) noexcept;
-
-    private:
-        static const std::string _createRequestQuery;
-        
         inline static const boost::bimap<requestSide, std::string> requestSides = 
             boost::assign::list_of<boost::bimap<requestSide, std::string>::relation>
             ( requestSide::purchase, "PURCHASE" )
@@ -55,5 +47,28 @@ namespace sm::service {
             boost::assign::list_of<boost::bimap<requestStatus, std::string>::relation>
             ( requestStatus::active, "ACTIVE" )
             ( requestStatus::closed, "CLOSED" );
+
+        RequestService() = default;
+
+        ~RequestService() = default;
+        
+        static std::string create(Request request, errorCode& eCode) noexcept;
+        // static std::list<std::list<std::string>> getActivePurchases(
+        //     const int price, 
+        //     errorCode& eCode) noexcept;
+        static std::list<std::list<std::string>> getActiveSells(
+            const int price,
+            std::string_view registrationTime, 
+            errorCode& eCode) noexcept;
+        static std::list<std::string> getRequestById(std::string_view id, errorCode& eCode) noexcept;
+        static void decreaseVolume(std::string_view requestId, const int difference) noexcept;
+
+    private:
+        static const std::string _createRequestQuery;
+        static const std::string _getActivePurchasesQuery;
+        static const std::string _getActiveSellsQuery;
+        static const std::string _getRequestByIdQuery;
+        // static const std::string _finishRequestQuery;
+        static const std::string _decreaseVolumeQuery;
     };
 }

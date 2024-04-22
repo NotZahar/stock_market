@@ -10,6 +10,7 @@
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
 #include <boost/asio/use_awaitable.hpp>
+#include <boost/asio/thread_pool.hpp>
 #include <boost/url.hpp>
 
 namespace sm {
